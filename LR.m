@@ -1,0 +1,12 @@
+clc;
+syms y s t;
+L=input('Digite L: ');
+R=input('Digite R: ');
+i=input('Digite i(0): ');
+Lr=L*(s*y-i)+R*y;
+f=sin(t)-(sin(t)*heaviside(t-(3*pi/2)));
+Solution=solve(Lr-laplace(f),y);
+InSolution=ilaplace(Solution);
+pretty(InSolution);
+ezplot(InSolution,0,6);
+grid;
